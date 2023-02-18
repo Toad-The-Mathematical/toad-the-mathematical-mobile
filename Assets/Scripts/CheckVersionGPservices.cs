@@ -8,18 +8,18 @@ public class CheckVersionGPservices : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        Firebase.Messaging.FirebaseMessaging.TokenReceived += OnTokenReceived;
-        Firebase.Messaging.FirebaseMessaging.MessageReceived += OnMessageReceived;
+        FirebaseMessaging.TokenReceived += OnTokenReceived;
+        FirebaseMessaging.MessageReceived += OnMessageReceived;
     }
 
-    public void OnTokenReceived(object sender, Firebase.Messaging.TokenReceivedEventArgs token)
+    public void OnTokenReceived(object sender, TokenReceivedEventArgs token)
     {
-        UnityEngine.Debug.Log("Received Registration Token: " + token.Token);
+        Debug.Log("Received Registration Token: " + token.Token);
     }
 
-    public void OnMessageReceived(object sender, Firebase.Messaging.MessageReceivedEventArgs e)
+    public void OnMessageReceived(object sender, MessageReceivedEventArgs e)
     {
-        UnityEngine.Debug.Log("Received a new message from: " + e.Message.From);
+        Debug.Log("Received a new message from: " + e.Message.From);
     }
 
     // Update is called once per frame
